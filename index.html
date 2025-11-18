@@ -1,67 +1,726 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CAP Garland, LLC</title>
+  <title>LE TRÉSOR DES PAVÉS DE SAINT JEAN - Souvenirs & Saveurs de Lyon</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="LE TRÉSOR DES PAVÉS DE SAINT JEAN - Boutique de souvenirs, produits lyonnais et épicerie fine au cœur du Vieux Lyon."
+  />
+
+  <!-- Google Font -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
   <style>
-    body {
-      font-family: Arial, sans-serif;
+    * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      background-color: #f0f0f0;
-      color: #333;
     }
+
+    body {
+      font-family: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #0b0a0a;
+      color: #f9fafb;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    /* Nav */
     header {
-      background-color: #003366;
-      color: white;
-      padding: 30px 20px;
-      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(15, 13, 13, 0.96);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(148, 163, 184, 0.35);
+      box-shadow: 0 2px 14px rgba(15, 23, 42, 0.7);
     }
+
+    .nav {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0.8rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #fbbf24;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.2rem;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a {
+      padding-bottom: 0.12rem;
+      border-bottom: 2px solid transparent;
+      transition: border-color 0.2s ease, color 0.2s ease;
+      color: #e5e7eb;
+    }
+
+    .nav-links a:hover {
+      border-color: #fbbf24;
+      color: #fef9c3;
+    }
+
+    /* Hero */
+    .hero {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2.4rem 1.5rem 3.2rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2.4rem;
+      align-items: center;
+    }
+
+    .hero-text h1 {
+      font-size: 2.4rem;
+      color: #f9fafb;
+      margin-bottom: 0.8rem;
+    }
+
+    .hero-text h1 span {
+      color: #fbbf24;
+    }
+
+    .hero-text p {
+      margin-bottom: 1.6rem;
+      color: #e5e7eb;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 0.35rem 0.9rem;
+      background: rgba(248, 250, 252, 0.05);
+      border-radius: 999px;
+      font-size: 0.8rem;
+      margin-bottom: 0.9rem;
+      color: #fef3c7;
+      border: 1px solid rgba(251, 191, 36, 0.6);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
+
+    .btn {
+      border-radius: 999px;
+      padding: 0.7rem 1.5rem;
+      font-weight: 500;
+      border: none;
+      cursor: pointer;
+      font-size: 0.95rem;
+      transition: transform 0.15s ease, box-shadow 0.15s ease,
+        background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #f59e0b, #b45309);
+      color: #111827;
+      box-shadow: 0 12px 30px rgba(180, 83, 9, 0.6);
+      border: 1px solid #fbbf24;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 42px rgba(180, 83, 9, 0.8);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 1px solid rgba(156, 163, 175, 0.8);
+      color: #f9fafb;
+    }
+
+    .btn-outline:hover {
+      background: rgba(24, 24, 27, 0.9);
+      border-color: #fbbf24;
+      color: #fef9c3;
+    }
+
+    .hero-meta {
+      font-size: 0.85rem;
+      color: #9ca3af;
+      margin-top: 0.9rem;
+    }
+
+    .hero-image-wrap {
+      position: relative;
+    }
+
+    .hero-main-img {
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 22px 60px rgba(0, 0, 0, 0.9);
+      border: 1px solid rgba(75, 85, 99, 0.9);
+      background: #020617;
+    }
+
+    .hero-main-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero-float {
+      position: absolute;
+      right: -12px;
+      bottom: -20px;
+      width: 47%;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 20px 55px rgba(0, 0, 0, 0.95);
+      border: 2px solid #111827;
+      background: #020617;
+    }
+
+    .hero-float img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Sections */
     section {
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 0 20px;
+      padding: 2.7rem 1.5rem;
     }
-    h1, h2 {
-      color: #003366;
+
+    .section-inner {
+      max-width: 1100px;
+      margin: 0 auto;
     }
-    .contact {
-      background: #fff;
-      padding: 20px;
-      border-left: 5px solid #003366;
-      margin-top: 30px;
-    }
-    footer {
-      background-color: #003366;
-      color: white;
+
+    .section-title {
       text-align: center;
-      padding: 15px;
-      margin-top: 50px;
+      margin-bottom: 2rem;
+    }
+
+    .section-title h2 {
+      font-size: 1.9rem;
+      margin-bottom: 0.3rem;
+      color: #fef3c7;
+    }
+
+    .section-title p {
+      color: #d1d5db;
+      font-size: 0.95rem;
+    }
+
+    /* Services / Univers */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.7rem;
+    }
+
+    .card {
+      background: radial-gradient(circle at top, #111827 0, #020617 70%);
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 16px 45px rgba(0, 0, 0, 0.9);
+      border: 1px solid rgba(75, 85, 99, 0.9);
+      padding: 1.3rem 1.4rem 1.5rem;
+      transition: transform 0.2s ease, box-shadow 0.2s ease,
+        border-color 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 22px 60px rgba(0, 0, 0, 1);
+      border-color: rgba(251, 191, 36, 0.9);
+    }
+
+    .card-title {
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+      color: #fefce8;
+    }
+
+    .card-desc {
+      font-size: 0.9rem;
+      color: #e5e7eb;
+      margin-bottom: 0.6rem;
+    }
+
+    .card-tag {
+      display: inline-block;
+      font-size: 0.8rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 999px;
+      background: rgba(251, 191, 36, 0.15);
+      color: #fef9c3;
+      border: 1px solid rgba(251, 191, 36, 0.7);
+    }
+
+    /* Galerie */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.7rem;
+    }
+
+    .gallery-card {
+      background: radial-gradient(circle at top, #111827 0, #020617 70%);
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 16px 45px rgba(0, 0, 0, 0.9);
+      border: 1px solid rgba(75, 85, 99, 0.9);
+      padding: 1.2rem 1.3rem 1.4rem;
+      transition: transform 0.2s ease, box-shadow 0.2s ease,
+        border-color 0.2s ease;
+    }
+
+    .gallery-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 22px 60px rgba(0, 0, 0, 1);
+      border-color: rgba(251, 191, 36, 0.9);
+    }
+
+    .gallery-img {
+      height: 190px;
+      overflow: hidden;
+      border-radius: 14px;
+      margin-bottom: 0.8rem;
+    }
+
+    .gallery-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.98;
+      transition: transform 0.6s ease, opacity 0.3s ease;
+    }
+
+    .gallery-card:hover .gallery-img img {
+      transform: scale(1.05);
+      opacity: 1;
+    }
+
+    .gallery-title {
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+      color: #fefce8;
+      font-size: 0.95rem;
+    }
+
+    /* Bande */
+    .band {
+      background-image: url('https://i.pinimg.com/736x/9d/ff/a6/9dffa684b7602a122b099b969a38aa50.jpg');
+      background-size: cover;
+      background-position: center;
+      padding: 3rem 1.5rem;
+      margin-top: 2.6rem;
+      border-radius: 22px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 20px 55px rgba(0, 0, 0, 1);
+    }
+
+    .band::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        135deg,
+        rgba(15, 23, 42, 0.95),
+        rgba(180, 83, 9, 0.85)
+      );
+    }
+
+    .band-inner {
+      position: relative;
+      max-width: 1100px;
+      margin: 0 auto;
+      color: #fef9c3;
+      text-align: center;
+    }
+
+    .band-inner h3 {
+      font-size: 1.6rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .band-inner p {
+      font-size: 0.95rem;
+      max-width: 680px;
+      margin: 0.2rem auto 0;
+    }
+
+    /* Contact */
+    .contact {
+      background: #020617;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+    }
+
+    .contact-card,
+    .contact-form {
+      background: radial-gradient(circle at top, #111827 0, #020617 70%);
+      border-radius: 18px;
+      box-shadow: 0 20px 55px rgba(0, 0, 0, 0.95);
+      padding: 1.5rem;
+      font-size: 0.95rem;
+      border: 1px solid rgba(75, 85, 99, 0.9);
+    }
+
+    .contact-card h3 {
+      margin-bottom: 0.6rem;
+      font-size: 1.1rem;
+      color: #fef3c7;
+    }
+
+    .contact-card p {
+      margin-bottom: 0.4rem;
+      color: #e5e7eb;
+    }
+
+    .contact-label {
+      font-weight: 600;
+      color: #facc15;
+    }
+
+    .contact-form form {
+      display: grid;
+      gap: 0.9rem;
+    }
+
+    .form-group label {
+      font-size: 0.85rem;
+      margin-bottom: 0.2rem;
+      display: block;
+      color: #f9fafb;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.6rem 0.75rem;
+      border-radius: 10px;
+      border: 1px solid rgba(75, 85, 99, 0.9);
+      font-family: inherit;
+      font-size: 0.9rem;
+      outline: none;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease,
+        background 0.2s ease;
+      background: rgba(15, 23, 42, 0.98);
+      color: #f9fafb;
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: #9ca3af;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: #fbbf24;
+      box-shadow: 0 0 0 3px rgba(251, 191, 36, 0.45);
+      background: rgba(15, 23, 42, 1);
+    }
+
+    .form-group textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    /* Footer */
+    footer {
+      background: #020617;
+      border-top: 1px solid rgba(75, 85, 99, 0.9);
+      padding: 1rem 1.5rem 1.5rem;
+      font-size: 0.8rem;
+      color: #9ca3af;
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.5rem;
+      align-items: center;
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        padding-top: 1.7rem;
+      }
+
+      .hero-text h1 {
+        font-size: 2.1rem;
+      }
+
+      .hero-float {
+        display: none;
+      }
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>CAP Garland, LLC</h1>
-    <p>Private Investment Fund</p>
+    <nav class="nav">
+      <div class="logo">LE TRÉSOR DES PAVÉS DE SAINT JEAN</div>
+      <div class="nav-links">
+        <a href="#accueil">Accueil</a>
+        <a href="#univers">Univers</a>
+        <a href="#galerie">Galerie</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
   </header>
 
-  <section>
-    <h2>About Us</h2>
-    <p>CAP Garland, LLC is a Washington-based private investment fund focused on delivering value through diversified investment strategies.</p>
+  <!-- Hero -->
+  <main id="accueil">
+    <section class="hero">
+      <div class="hero-text">
+        <div class="badge">Vieux Lyon • Souvenirs & épicerie fine</div>
+        <h1>
+          Un trésor de <span>souvenirs</span> au cœur des pavés de Saint-Jean
+        </h1>
+        <p>
+          LE TRÉSOR DES PAVÉS DE SAINT JEAN est une boutique chaleureuse
+          dédiée aux souvenirs, petites attentions et saveurs inspirées de Lyon
+          et de ses ruelles historiques.
+        </p>
 
-    <h2>Contact</h2>
-    <div class="contact">
-      <p><strong>Address:</strong> 915 W 2nd Ave, Spokane, WA 99201</p>
-      <p><strong>Email:</strong> <a href="mailto:ryanberg@capgarland.shop">ryanberg@capgarland.shop</a></p>
-      <p><strong>Phone:</strong> (509) 822-3850</p>
-    </div>
-  </section>
+        <div class="hero-actions">
+          <a href="#univers">
+            <button class="btn btn-primary">Découvrir l’univers</button>
+          </a>
+          <a href="#contact">
+            <button class="btn btn-outline">Poser une question</button>
+          </a>
+        </div>
+
+        <p class="hero-meta">
+          Lyon, France • Entre ruelles pavées, façades anciennes et petites lumières du Vieux Lyon.
+        </p>
+      </div>
+
+      <div class="hero-image-wrap">
+        <div class="hero-main-img">
+          <!-- Image 1 : rue pavée, ambiance Vieux Lyon -->
+          <img
+            src="https://i.pinimg.com/originals/6d/d8/61/6dd8616c74913f3dbb301e9fb261bf6c.jpg"
+            alt="Ruelle pavée de style ancien, ambiance Vieux Lyon"
+          />
+        </div>
+        <div class="hero-float">
+          <!-- Image 2 : intérieur de boutique -->
+          <img
+            src="https://mixologyxtrends.com/wp-content/uploads/2019/11/Clothing-Boutique.jpg"
+            alt="Intérieur de boutique chaleureuse"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Univers -->
+    <section id="univers">
+      <div class="section-inner">
+        <div class="section-title">
+          <h2>Notre univers</h2>
+          <p>Souvenirs, objets déco et petites douceurs à ramener des pavés de Saint-Jean.</p>
+        </div>
+
+        <div class="services-grid">
+          <article class="card">
+            <h3 class="card-title">Souvenirs & petits cadeaux</h3>
+            <p class="card-desc">
+              Cartes, magnets, carnets, affiches et objets à glisser dans une valise
+              ou à offrir à ceux qui aiment Lyon.
+            </p>
+            <span class="card-tag">Souvenirs du Vieux Lyon</span>
+          </article>
+
+          <article class="card">
+            <h3 class="card-title">Épicerie fine & gourmandises</h3>
+            <p class="card-desc">
+              Sélection de douceurs, thés, confiseries et produits à partager,
+              inspirés des saveurs et de l’ambiance lyonnaise.
+            </p>
+            <span class="card-tag">Saveurs à ramener</span>
+          </article>
+
+          <article class="card">
+            <h3 class="card-title">Objets déco & ambiance</h3>
+            <p class="card-desc">
+              Bougies, petites décorations et détails qui rappellent les pavés,
+              les façades et les lumières de la ville.
+            </p>
+            <span class="card-tag">Atmosphère de ruelle</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Galerie -->
+    <section id="galerie">
+      <div class="section-inner">
+        <div class="section-title">
+          <h2>Galerie</h2>
+          <p>Quelques ambiances qui inspirent LE TRÉSOR DES PAVÉS DE SAINT JEAN.</p>
+        </div>
+
+        <div class="gallery-grid">
+          <article class="gallery-card">
+            <div class="gallery-img">
+              <img
+                src="https://i.pinimg.com/originals/6d/d8/61/6dd8616c74913f3dbb301e9fb261bf6c.jpg"
+                alt="Ruelle pavée de style ancien"
+              />
+            </div>
+            <h3 class="gallery-title">Ruelles pavées & façades</h3>
+          </article>
+
+          <article class="gallery-card">
+            <div class="gallery-img">
+              <img
+                src="https://mixologyxtrends.com/wp-content/uploads/2019/11/Clothing-Boutique.jpg"
+                alt="Intérieur de boutique"
+              />
+            </div>
+            <h3 class="gallery-title">Une boutique chaleureuse</h3>
+          </article>
+
+          <article class="gallery-card">
+            <div class="gallery-img">
+              <img
+                src="https://i.pinimg.com/736x/9d/ff/a6/9dffa684b7602a122b099b969a38aa50.jpg"
+                alt="Comptoir avec verres et ambiance cosy"
+              />
+            </div>
+            <h3 class="gallery-title">Lumières chaudes & comptoirs</h3>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bande -->
+    <section class="band">
+      <div class="band-inner">
+        <h3>Un souvenir à chaque pas sur les pavés</h3>
+        <p>
+          Entre deux ruelles, un café, une façade ancienne ou un rayon de soleil
+          sur les pierres, il y a toujours un détail à garder avec soi :
+          une saveur, un objet, une image.
+        </p>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="contact">
+      <div class="section-inner">
+        <div class="section-title">
+          <h2>Contact</h2>
+          <p>Une question sur un produit ou une commande&nbsp;? Écrivez-nous.</p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-card">
+            <h3>Coordonnées</h3>
+            <p>
+              <span class="contact-label">Boutique :</span>
+              LE TRÉSOR DES PAVÉS DE SAINT JEAN
+            </p>
+            <p>
+              <span class="contact-label">Email :</span>
+              <a href="mailto:admin@elventoe.shop">admin@elventoe.shop</a>
+            </p>
+            <p>
+              <span class="contact-label">Téléphone :</span>
+              <a href="tel:+33745539027">+33 7 45 53 90 27</a>
+            </p>
+            <p>
+              <span class="contact-label">Localisation :</span><br />
+              Lyon, France
+            </p>
+          </div>
+
+          <div class="contact-form">
+            <!-- Formulaire statique -->
+            <form>
+              <div class="form-group">
+                <label for="name">Nom / Société</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Votre nom ou nom d'entreprise"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="email">Adresse e-mail</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="vous@example.com"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="message">Votre demande</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  placeholder="Question sur un souvenir, une commande, une idée cadeau..."
+                  required
+                ></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary">
+                Envoyer le message
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <footer>
-    &copy; 2025 CAP Garland, LLC. All rights reserved.
+    <div class="footer-inner">
+      <span>© <span id="year"></span> LE TRÉSOR DES PAVÉS DE SAINT JEAN. Tous droits réservés.</span>
+      <span>Souvenirs & saveurs • Lyon, France</span>
+    </div>
   </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
